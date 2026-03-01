@@ -3,746 +3,417 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Meu Mural (texto + imagens)</title>
+  <title>Pra Você 💛</title>
   <style>
     :root{
-      --bg:#0b0f17;
-      --panel:#111827;
-      --panel2:#0f172a;
+      --bg:#070a12;
+      --panel:#0f172a;
+      --panel2:#111827;
       --text:#e5e7eb;
       --muted:#94a3b8;
-      --accent:#60a5fa;
-      --danger:#fb7185;
-      --ok:#34d399;
-      --border:#233047;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
+      --accent:#f472b6;
+      --accent2:#60a5fa;
+      --border:#233147;
+      --shadow: 0 14px 38px rgba(0,0,0,.45);
+      --r: 22px;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     }
     *{box-sizing:border-box}
     body{
-      margin:0; font-family:var(--sans);
-      background: radial-gradient(1200px 700px at 20% 0%, rgba(96,165,250,.20), transparent 60%),
-                  radial-gradient(900px 600px at 90% 20%, rgba(52,211,153,.12), transparent 60%),
-                  var(--bg);
-      color:var(--text);
+      margin:0; font-family:var(--sans); color:var(--text);
+      background:
+        radial-gradient(900px 600px at 12% 0%, rgba(244,114,182,.22), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(96,165,250,.18), transparent 60%),
+        var(--bg);
     }
     header{
       position:sticky; top:0; z-index:10;
       backdrop-filter: blur(10px);
-      background: rgba(11,15,23,.65);
-      border-bottom: 1px solid rgba(35,48,71,.7);
+      background: rgba(7,10,18,.65);
+      border-bottom: 1px solid rgba(35,49,71,.75);
     }
-    .wrap{max-width:1100px; margin:0 auto; padding:18px 16px;}
+    .wrap{max-width:1100px; margin:0 auto; padding:16px}
     .top{
-      display:flex; gap:12px; align-items:center; justify-content:space-between;
-      flex-wrap:wrap;
+      display:flex; gap:12px; justify-content:space-between; align-items:center; flex-wrap:wrap;
     }
-    .brand{
-      display:flex; gap:12px; align-items:center;
-    }
-    .logo{
-      width:42px; height:42px; border-radius:14px;
-      background: linear-gradient(135deg, rgba(96,165,250,.95), rgba(52,211,153,.85));
+    .brand{display:flex; gap:12px; align-items:center}
+    .orb{
+      width:44px; height:44px; border-radius:16px;
+      background: linear-gradient(135deg, rgba(244,114,182,.95), rgba(96,165,250,.85));
       box-shadow: var(--shadow);
     }
-    h1{font-size:18px; margin:0}
-    .sub{font-size:12px; color:var(--muted); margin:2px 0 0}
+    h1{margin:0; font-size:18px}
+    .sub{margin-top:3px; color:var(--muted); font-size:12px}
     .btns{display:flex; gap:10px; flex-wrap:wrap}
-    button, .btn{
-      appearance:none; border:1px solid rgba(35,48,71,.9);
-      background: linear-gradient(180deg, rgba(17,24,39,.9), rgba(15,23,42,.9));
-      color:var(--text); padding:10px 12px; border-radius:14px;
-      cursor:pointer; font-weight:600;
-      box-shadow: 0 6px 16px rgba(0,0,0,.18);
-      transition: transform .05s ease, border-color .15s ease, background .15s ease;
+    button{
+      border:1px solid rgba(35,49,71,.92);
+      background: linear-gradient(180deg, rgba(15,23,42,.92), rgba(17,24,39,.9));
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:16px;
+      cursor:pointer;
+      font-weight:800;
+      box-shadow: 0 6px 16px rgba(0,0,0,.25);
+      transition: transform .05s ease, border-color .15s ease;
     }
-    button:hover, .btn:hover{border-color: rgba(96,165,250,.55)}
-    button:active, .btn:active{transform: translateY(1px)}
-    .btn.secondary{color:var(--muted)}
-    .btn.danger{border-color: rgba(251,113,133,.55)}
-    .btn.danger:hover{border-color: rgba(251,113,133,.9)}
+    button:hover{border-color: rgba(244,114,182,.65)}
+    button:active{transform: translateY(1px)}
+    main{padding:16px 0 34px}
     .grid{
-      display:grid; grid-template-columns: 380px 1fr; gap:16px;
-      margin-top:16px;
+      display:grid; grid-template-columns: 1fr 1fr; gap:16px;
     }
-    @media (max-width: 980px){
-      .grid{grid-template-columns: 1fr}
-    }
+    @media (max-width: 980px){ .grid{grid-template-columns: 1fr} }
     .card{
-      background: rgba(17,24,39,.8);
-      border:1px solid rgba(35,48,71,.9);
-      border-radius: var(--radius);
+      background: rgba(15,23,42,.76);
+      border:1px solid rgba(35,49,71,.92);
+      border-radius: var(--r);
       box-shadow: var(--shadow);
       overflow:hidden;
     }
     .card h2{
-      margin:0; font-size:14px; letter-spacing:.2px;
-      padding:14px 14px 10px;
-      border-bottom:1px solid rgba(35,48,71,.7);
-      color: #dbeafe;
-    }
-    .card .content{padding:14px}
-    label{display:block; font-size:12px; color:var(--muted); margin:10px 0 6px}
-    input[type="text"], textarea{
-      width:100%;
-      background: rgba(15,23,42,.9);
-      border:1px solid rgba(35,48,71,.9);
-      color:var(--text);
-      border-radius:14px;
-      padding:10px 12px;
-      outline:none;
-    }
-    textarea{min-height:110px; resize:vertical}
-    input[type="file"]{
-      width:100%;
-      padding:10px 0;
-      color:var(--muted);
-    }
-    .hint{
-      font-size:12px; color:var(--muted); line-height:1.35;
-      margin-top:8px;
-    }
-    .row{
-      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
-      margin-top:10px;
-    }
-    .pill{
-      font-family:var(--mono);
-      font-size:11px; color: rgba(229,231,235,.9);
-      background: rgba(15,23,42,.9);
-      border:1px solid rgba(35,48,71,.9);
-      padding:6px 10px; border-radius:999px;
-    }
-    .preview{
-      display:grid; grid-template-columns: repeat(4, 1fr);
-      gap:8px; margin-top:10px;
-    }
-    @media (max-width: 420px){ .preview{grid-template-columns: repeat(3, 1fr)} }
-    .thumb{
-      aspect-ratio: 1/1;
-      border-radius: 14px;
-      overflow:hidden;
-      border:1px solid rgba(35,48,71,.9);
-      background: rgba(15,23,42,.8);
-      position:relative;
-    }
-    .thumb img{width:100%; height:100%; object-fit:cover; display:block}
-    .thumb .x{
-      position:absolute; top:6px; right:6px;
-      width:26px; height:26px; border-radius:999px;
-      border:1px solid rgba(35,48,71,.9);
-      background: rgba(11,15,23,.6);
-      color: var(--text);
-      cursor:pointer;
-      display:grid; place-items:center;
-      font-weight:800;
-    }
-    .thumb .x:hover{border-color: rgba(251,113,133,.85)}
-    .status{
-      margin-top:10px;
-      font-size:12px;
-      border-radius: 14px;
-      padding:10px 12px;
-      border:1px solid rgba(35,48,71,.9);
-      background: rgba(15,23,42,.8);
-      color: var(--muted);
-      line-height:1.35;
-    }
-    .status.ok{border-color: rgba(52,211,153,.55); color: rgba(167,243,208,.95)}
-    .status.warn{border-color: rgba(251,191,36,.55); color: rgba(254,243,199,.95)}
-    .status.bad{border-color: rgba(251,113,133,.55); color: rgba(255,228,230,.95)}
-    .galleryTop{
+      margin:0; padding:14px 14px 10px;
+      font-size:13px; letter-spacing:.2px;
+      color:#ffe4f2;
+      border-bottom:1px solid rgba(35,49,71,.7);
       display:flex; justify-content:space-between; align-items:center; gap:10px;
-      padding:14px;
-      border-bottom:1px solid rgba(35,48,71,.7);
-      flex-wrap:wrap;
     }
-    .search{
-      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
-      width:100%;
+    .content{padding:14px}
+    .meta{font-size:12px; color:var(--muted)}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid rgba(35,49,71,.92);
+      background: rgba(17,24,39,.7);
+      color: rgba(229,231,235,.92);
+      font-size:12px;
+      font-family: var(--mono);
     }
-    .search input{
-      flex: 1 1 240px;
+    .letter{
+      font-size:14px; line-height:1.55;
+      color: rgba(229,231,235,.95);
+      white-space:pre-wrap;
     }
-    .posts{
-      padding:14px;
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap:14px;
-    }
-    @media (max-width: 720px){ .posts{grid-template-columns: 1fr} }
-    .post{
-      border-radius: var(--radius);
-      border:1px solid rgba(35,48,71,.9);
-      background: rgba(15,23,42,.75);
-      overflow:hidden;
-    }
-    .postHead{
-      padding:12px 12px 10px;
-      display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
-      border-bottom:1px solid rgba(35,48,71,.7);
-    }
-    .postTitle{margin:0; font-size:14px}
-    .meta{font-size:11px; color: var(--muted); margin-top:4px}
-    .postActions{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end}
-    .mini{
-      padding:8px 10px; border-radius:12px; font-size:12px; font-weight:700;
-    }
-    .mini.danger{border-color: rgba(251,113,133,.55)}
-    .body{padding:12px}
-    .body p{margin:0; color: rgba(229,231,235,.92); line-height:1.4; white-space:pre-wrap}
-    .imgs{
+    .quotes{
+      display:flex; flex-direction:column; gap:10px;
       margin-top:10px;
-      display:grid; grid-template-columns: repeat(3, 1fr);
-      gap:8px;
     }
-    @media (max-width: 420px){ .imgs{grid-template-columns: repeat(2, 1fr)} }
-    .imgs img{
-      width:100%; aspect-ratio: 1/1;
-      object-fit:cover;
-      border-radius: 14px;
-      border:1px solid rgba(35,48,71,.9);
-      cursor:pointer;
-    }
-    dialog{
-      border:1px solid rgba(35,48,71,.9);
-      border-radius: 18px;
-      background: rgba(11,15,23,.95);
-      color: var(--text);
-      box-shadow: var(--shadow);
-      max-width: min(980px, 92vw);
-    }
-    dialog::backdrop{background: rgba(0,0,0,.6)}
-    .dlg{
+    .quote{
+      border:1px solid rgba(35,49,71,.92);
+      background: rgba(17,24,39,.6);
+      border-radius: 16px;
       padding:12px;
     }
-    .dlgTop{
-      display:flex; justify-content:space-between; align-items:center;
-      gap:12px; padding:10px 6px 6px;
+    .quote b{color:#ffd1e8}
+    .quote .t{font-size:13px; line-height:1.45}
+    .quote .s{margin-top:6px; font-size:11px; color:var(--muted)}
+    .big{grid-column: 1 / -1;}
+
+    /* player */
+    .playerTop{
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+      flex-wrap:wrap; margin-bottom:10px;
     }
-    .dlgTop .t{font-weight:800}
-    .dlg img{
-      width: 100%;
-      border-radius: 18px;
-      border:1px solid rgba(35,48,71,.9);
+    .playerTitle{
+      font-weight:900;
+      color: rgba(229,231,235,.95);
+    }
+    .controls{
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center;
+    }
+    .controls button{padding:10px 12px}
+    .controls .mini{
+      padding:8px 10px; border-radius:14px; font-size:12px; font-weight:900;
+    }
+    .controls label{
+      display:flex; gap:8px; align-items:center;
+      border:1px solid rgba(35,49,71,.92);
+      background: rgba(17,24,39,.6);
+      padding:8px 10px;
+      border-radius: 14px;
+      color: rgba(229,231,235,.92);
+      font-size:12px;
+      user-select:none;
+    }
+    .controls input{accent-color: var(--accent);}
+    video{
+      width:100%;
       display:block;
-      margin: 8px 0 12px;
+      background:#000;
+      border-radius: 18px;
+      border:1px solid rgba(35,49,71,.92);
     }
-    .kbd{font-family:var(--mono); font-size:11px; color:var(--muted)}
-    footer{padding:18px 16px; color: var(--muted); font-size:12px; text-align:center}
-    a{color: var(--accent); text-decoration:none}
+    .playlist{
+      margin-top:12px;
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:10px;
+    }
+    @media (max-width: 720px){ .playlist{grid-template-columns: 1fr} }
+    .item{
+      border:1px solid rgba(35,49,71,.92);
+      background: rgba(17,24,39,.55);
+      border-radius: 16px;
+      padding:10px 12px;
+      cursor:pointer;
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+    }
+    .item:hover{border-color: rgba(96,165,250,.55)}
+    .item.active{
+      border-color: rgba(244,114,182,.85);
+      box-shadow: 0 0 0 3px rgba(244,114,182,.15);
+    }
+    .item .name{font-weight:900; font-size:13px}
+    .item .tag{font-size:11px; color:var(--muted); font-family: var(--mono)}
+    .surprise{
+      border:1px dashed rgba(244,114,182,.55);
+      background: rgba(244,114,182,.08);
+      border-radius: 18px;
+      padding:12px;
+      margin-top:12px;
+    }
+    .surprise .out{
+      margin-top:8px;
+      font-size:14px;
+      color: rgba(229,231,235,.95);
+      min-height: 22px;
+    }
+    footer{
+      padding:18px 16px;
+      text-align:center;
+      color: var(--muted);
+      font-size:12px;
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="wrap">
-      <div class="top">
-        <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="orb" aria-hidden="true"></div>
+        <div>
+          <h1>Pra você, com carinho 💛</h1>
+          <div class="sub">Vídeos + mensagens. Um cantinho nosso.</div>
+        </div>
+      </div>
+      <div class="btns">
+        <button id="btnRandom">Mensagem surpresa</button>
+        <button id="btnScroll">Ir pros vídeos</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+
+    <section class="card">
+      <h2>
+        <span>Carta</span>
+        <span class="pill" id="today"></span>
+      </h2>
+      <div class="content">
+        <div class="letter" id="letter"></div>
+
+        <div class="surprise">
+          <div class="meta">Quando você apertar “Mensagem surpresa”, aparece aqui:</div>
+          <div class="out" id="surpriseOut"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>
+        <span>Frases</span>
+        <span class="meta" id="qCount"></span>
+      </h2>
+      <div class="content">
+        <div class="meta">Olha como minha mulher é linda.</div>
+        <div class="quotes" id="quotes"></div>
+      </div>
+    </section>
+
+    <section class="card big" id="videosCard">
+      <h2>
+        <span>Vídeos</span>
+        <span class="meta">Use Anterior/Próximo ou clique na playlist</span>
+      </h2>
+      <div class="content">
+
+        <div class="playerTop">
           <div>
-            <h1>Meu Mural — texto + imagens</h1>
-            <div class="sub">Tudo roda localmente no seu navegador (sem servidor). 🔬</div>
+            <div class="playerTitle" id="playerTitle"></div>
+            <div class="meta" id="playerMeta"></div>
+          </div>
+
+          <div class="controls">
+            <button class="mini" id="btnPrev">⟵ Anterior</button>
+            <button class="mini" id="btnNext">Próximo ⟶</button>
+            <label title="Se estiver ligado, ao acabar um vídeo ele vai para o próximo automaticamente.">
+              <input type="checkbox" id="chkAuto" checked />
+              Auto-próximo
+            </label>
           </div>
         </div>
-        <div class="btns">
-          <button id="btnExport" class="btn secondary">Exportar (.json)</button>
-          <label class="btn secondary" for="importFile" style="cursor:pointer">
-            Importar (.json)
-          </label>
-          <input id="importFile" type="file" accept="application/json" hidden />
-          <button id="btnClearAll" class="btn danger">Apagar tudo</button>
-        </div>
+
+        <video id="player" controls preload="metadata" playsinline></video>
+
+        <div class="playlist" id="playlist"></div>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <main class="wrap">
-    <div class="grid">
-      <section class="card" aria-label="Criar postagem">
-        <h2>Criar postagem</h2>
-        <div class="content">
-          <label for="title">Título</label>
-          <input id="title" type="text" maxlength="80" placeholder="Ex: Nebulosas são basicamente nuvens cósmicas..." />
+  </div>
+</main>
 
-          <label for="text">Texto</label>
-          <textarea id="text" maxlength="5000" placeholder="Escreve aqui. Pode colar texto, listas, o que quiser..."></textarea>
+<footer>
+  Eu te amo muito, amor. 💛
+</footer>
 
-          <label for="images">Anexar imagens</label>
-          <input id="images" type="file" accept="image/*" multiple />
+<script>
+  // =========================
+  // PERSONALIZE AQUI (FÁCIL)
+  // =========================
 
-          <div class="row">
-            <span class="pill" id="pillCount">0 imagens selecionadas</span>
-            <span class="pill" id="pillSize">0 KB</span>
-          </div>
+  const NOME_DELA = "Meu Amor"; // troque pelo nome dela
 
-          <div class="preview" id="preview" aria-label="Prévia das imagens selecionadas"></div>
+  const CARTA = `Oi, ${NOME_DELA} 💛
 
-          <div class="row" style="margin-top:14px">
-            <button id="btnPost" class="btn" style="flex:1">Publicar</button>
-            <button id="btnReset" class="btn secondary">Limpar</button>
-          </div>
+Eu fiz esse site só pra você.
 
-          <div id="status" class="status">
-            Dica: se o navegador reclamar de espaço, use <b>Exportar</b> pra salvar tudo em um arquivo e depois <b>Importar</b>.
-          </div>
+Eu te amo muito, amor.`;
 
-          <div class="hint">
-            Nerd alert: as imagens são convertidas para <span class="kbd">dataURL (Base64)</span> pra ficar tudo offline.
-            Isso é prático, mas pesa. Export/Import te salva do limite do LocalStorage.
-          </div>
+  // Frases (adicione/remova à vontade)
+  const FRASES = [
+    { texto: "Eu te amo muito, amor. Muito mesmo.", assinatura: "— Seu homem" },
+    { texto: "Seu cabelo cacheado é absurdamente lindo. É tipo uma obra de arte que a natureza decidiu caprichar.", assinatura: "— Seu homem" },
+    { texto: "Seus olhos são lindos demais. Dá vontade de morar ali e pagar aluguel com carinho.", assinatura: "— Seu homem" },
+    { texto: "Seu sorriso é perfeito. Ele muda o meu dia na hora, como se fosse um atalho secreto pra felicidade.", assinatura: "— Seu homem" },
+    { texto: "Você é maravilhosa do jeitinho que é. E eu tenho orgulho de você.", assinatura: "— Seu homem" },
+    { texto: "Você é linda. Seu corpo é lindo. E o melhor: você inteira é uma pessoa incrível.", assinatura: "— Seu homem" }
+  ];
+
+  // Seus vídeos (nomes EXATOS como aparecem no repo)
+  // Como eles estão na RAIZ do repositório, não tem "videos/" antes.
+  const VIDEOS = [
+    { title: "Minha Mulher 1 💛", file: "Minha Mulher (1).mp4" },
+    { title: "Minha Mulher 2 💛", file: "Minha Mulher (2).mp4" },
+    { title: "Minha Mulher 3 💛", file: "Minha Mulher (3).mp4" },
+    { title: "Minha Mulher 4 💛", file: "Minha Mulher (4).mp4" },
+    { title: "Minha Mulher 5 💛", file: "Minha Mulher (5).mp4" },
+    { title: "Minha Mulher 6 💛", file: "Minha Mulher (6).mp4" },
+    { title: "Minha Mulher 7 💛", file: "Minha Mulher (7).mp4" },
+    { title: "Minha Mulher 8 💛", file: "Minha Mulher (8).mp4" },
+    { title: "Minha Mulher 9 💛", file: "Minha Mulher (9).mp4" },
+    { title: "Minha Mulher 10 💛", file: "Minha Mulher (10).mp4" }
+  ];
+
+  // =========================
+  // CÓDIGO DO SITE (NÃO MEXE)
+  // =========================
+
+  const $ = (s) => document.querySelector(s);
+
+  // carta + data
+  $("#letter").textContent = CARTA;
+  const d = new Date();
+  $("#today").textContent = d.toLocaleDateString("pt-BR", { day:"2-digit", month:"long", year:"numeric" });
+
+  // frases
+  $("#qCount").textContent = `${FRASES.length} frase(s)`;
+  const qWrap = $("#quotes");
+  qWrap.innerHTML = "";
+  FRASES.forEach((q) => {
+    const box = document.createElement("div");
+    box.className = "quote";
+    box.innerHTML = `
+      <div class="t"><b>“</b>${escapeHtml(q.texto)}<b>”</b></div>
+      <div class="s">${escapeHtml(q.assinatura || "")}</div>
+    `;
+    qWrap.appendChild(box);
+  });
+
+  // surpresa
+  $("#btnRandom").addEventListener("click", () => {
+    const pick = FRASES[Math.floor(Math.random() * FRASES.length)];
+    $("#surpriseOut").textContent = `“${pick.texto}” ${pick.assinatura ? pick.assinatura : ""}`;
+  });
+
+  // scroll
+  $("#btnScroll").addEventListener("click", () => {
+    $("#videosCard").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // player + playlist
+  const player = $("#player");
+  const playlist = $("#playlist");
+  const titleEl = $("#playerTitle");
+  const metaEl = $("#playerMeta");
+  const chkAuto = $("#chkAuto");
+
+  let idx = 0;
+
+  function setVideo(i, autoplay=false){
+    if (!VIDEOS.length) return;
+    idx = (i + VIDEOS.length) % VIDEOS.length;
+
+    const v = VIDEOS[idx];
+    titleEl.textContent = v.title || `Vídeo ${idx+1}`;
+    metaEl.textContent = `Vídeo ${idx+1} de ${VIDEOS.length}`;
+
+    // encodeURI resolve espaços/parênteses na URL do arquivo
+    player.src = encodeURI(v.file);
+
+    // marca ativo na playlist
+    [...playlist.children].forEach((el, j) => {
+      el.classList.toggle("active", j === idx);
+    });
+
+    if (autoplay){
+      player.play().catch(()=>{ /* ignore: navegador pode bloquear autoplay */ });
+    }
+  }
+
+  function renderPlaylist(){
+    playlist.innerHTML = "";
+    VIDEOS.forEach((v, i) => {
+      const item = document.createElement("div");
+      item.className = "item";
+      item.innerHTML = `
+        <div>
+          <div class="name">${escapeHtml(v.title || `Vídeo ${i+1}`)}</div>
+          <div class="tag">${escapeHtml(v.file)}</div>
         </div>
-      </section>
-
-      <section class="card" aria-label="Galeria">
-        <div class="galleryTop">
-          <div style="min-width: 220px">
-            <div style="font-weight:800">Galeria</div>
-            <div class="meta" id="metaTotal">0 posts</div>
-          </div>
-          <div class="search">
-            <input id="search" type="text" placeholder="Buscar por título ou texto..." />
-            <button id="btnSort" class="btn secondary">Ordenar: recente</button>
-          </div>
-        </div>
-        <div class="posts" id="posts"></div>
-      </section>
-    </div>
-  </main>
-
-  <dialog id="imgDialog">
-    <div class="dlg">
-      <div class="dlgTop">
-        <div class="t">Visualização</div>
-        <div class="row">
-          <span class="kbd">ESC</span>
-          <button class="btn secondary mini" id="btnCloseDlg">Fechar</button>
-        </div>
-      </div>
-      <img id="dlgImg" alt="Imagem ampliada" />
-      <div class="kbd" id="dlgInfo"></div>
-    </div>
-  </dialog>
-
-  <footer>
-    Feito com HTML/CSS/JS puro. Sem servidor. Sem magia. Só ciência aplicada ao caos. 🧠
-  </footer>
-
-  <script>
-    // =============== Util ===============
-    const $ = (sel) => document.querySelector(sel);
-    const $$ = (sel) => [...document.querySelectorAll(sel)];
-    const fmtBytes = (n) => {
-      if (!Number.isFinite(n)) return "0 B";
-      const units = ["B","KB","MB","GB"];
-      let i = 0;
-      while (n >= 1024 && i < units.length - 1) { n /= 1024; i++; }
-      return `${n.toFixed(i === 0 ? 0 : 1)} ${units[i]}`;
-    };
-    const nowISO = () => new Date().toISOString();
-    const uid = () => crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2);
-
-    // =============== State ===============
-    const LS_KEY = "mural_posts_v1";
-    let selectedImages = []; // { id, name, size, type, dataUrl }
-    let sortMode = "recent"; // recent | old
-    let posts = loadPosts();
-
-    // =============== Elements ===============
-    const elTitle = $("#title");
-    const elText = $("#text");
-    const elImages = $("#images");
-    const elPreview = $("#preview");
-    const elPillCount = $("#pillCount");
-    const elPillSize = $("#pillSize");
-    const elStatus = $("#status");
-    const elPosts = $("#posts");
-    const elMetaTotal = $("#metaTotal");
-    const elSearch = $("#search");
-    const elBtnSort = $("#btnSort");
-    const elBtnPost = $("#btnPost");
-    const elBtnReset = $("#btnReset");
-    const elBtnClearAll = $("#btnClearAll");
-    const elBtnExport = $("#btnExport");
-    const elImportFile = $("#importFile");
-    const dlg = $("#imgDialog");
-    const dlgImg = $("#dlgImg");
-    const dlgInfo = $("#dlgInfo");
-    const btnCloseDlg = $("#btnCloseDlg");
-
-    // =============== Load/Save ===============
-    function loadPosts(){
-      try{
-        const raw = localStorage.getItem(LS_KEY);
-        if (!raw) return [];
-        const parsed = JSON.parse(raw);
-        if (!Array.isArray(parsed)) return [];
-        return parsed;
-      }catch(e){
-        console.warn("Falha ao carregar:", e);
-        return [];
-      }
-    }
-
-    function savePosts(){
-      try{
-        localStorage.setItem(LS_KEY, JSON.stringify(posts));
-        setStatus("Salvo localmente ✅", "ok");
-        return true;
-      }catch(e){
-        console.warn("Falha ao salvar:", e);
-        setStatus(
-          "Deu ruim ao salvar: provavelmente falta espaço no LocalStorage. Use Exportar (JSON) pra não perder nada.",
-          "bad"
-        );
-        return false;
-      }
-    }
-
-    // =============== UI helpers ===============
-    function setStatus(msg, kind=""){
-      elStatus.className = "status" + (kind ? " " + kind : "");
-      elStatus.innerHTML = msg;
-    }
-
-    function updateSelectedMeta(){
-      elPillCount.textContent = `${selectedImages.length} imagens selecionadas`;
-      const totalBytes = selectedImages.reduce((acc, im) => acc + (im.size || 0), 0);
-      elPillSize.textContent = fmtBytes(totalBytes);
-    }
-
-    function renderPreview(){
-      elPreview.innerHTML = "";
-      selectedImages.forEach((im) => {
-        const box = document.createElement("div");
-        box.className = "thumb";
-        const img = document.createElement("img");
-        img.src = im.dataUrl;
-        img.alt = im.name || "imagem";
-        img.title = im.name || "";
-        img.addEventListener("click", () => openDialog(im.dataUrl, im.name, im.size));
-        const x = document.createElement("button");
-        x.className = "x";
-        x.type = "button";
-        x.textContent = "×";
-        x.title = "Remover";
-        x.addEventListener("click", () => {
-          selectedImages = selectedImages.filter(x => x.id !== im.id);
-          updateSelectedMeta();
-          renderPreview();
-        });
-        box.appendChild(img);
-        box.appendChild(x);
-        elPreview.appendChild(box);
-      });
-    }
-
-    function openDialog(src, name="", size=0){
-      dlgImg.src = src;
-      dlgInfo.textContent = `${name || "imagem"} • ${fmtBytes(size)}`;
-      dlg.showModal();
-    }
-
-    // =============== Posts rendering ===============
-    function filteredPosts(){
-      const q = (elSearch.value || "").trim().toLowerCase();
-      let list = [...posts];
-
-      // sort
-      list.sort((a,b) => {
-        const ta = new Date(a.createdAt).getTime();
-        const tb = new Date(b.createdAt).getTime();
-        return sortMode === "recent" ? (tb - ta) : (ta - tb);
-      });
-
-      // filter
-      if (q){
-        list = list.filter(p =>
-          (p.title || "").toLowerCase().includes(q) ||
-          (p.text || "").toLowerCase().includes(q)
-        );
-      }
-      return list;
-    }
-
-    function renderPosts(){
-      const list = filteredPosts();
-      elMetaTotal.textContent = `${posts.length} post${posts.length === 1 ? "" : "s"} • exibindo ${list.length}`;
-      elPosts.innerHTML = "";
-
-      if (list.length === 0){
-        const empty = document.createElement("div");
-        empty.className = "status";
-        empty.style.gridColumn = "1 / -1";
-        empty.innerHTML = posts.length === 0
-          ? "Nada aqui ainda. Crie seu primeiro post à esquerda 👈"
-          : "Nenhum post corresponde à busca.";
-        elPosts.appendChild(empty);
-        return;
-      }
-
-      list.forEach((p) => {
-        const card = document.createElement("article");
-        card.className = "post";
-
-        const head = document.createElement("div");
-        head.className = "postHead";
-
-        const left = document.createElement("div");
-        const h = document.createElement("h3");
-        h.className = "postTitle";
-        h.textContent = p.title || "(sem título)";
-        const meta = document.createElement("div");
-        meta.className = "meta";
-        const dt = new Date(p.createdAt);
-        meta.textContent = `${dt.toLocaleString("pt-BR")} • ${p.images?.length || 0} imagem(ns)`;
-        left.appendChild(h);
-        left.appendChild(meta);
-
-        const actions = document.createElement("div");
-        actions.className = "postActions";
-
-        const btnCopy = document.createElement("button");
-        btnCopy.className = "mini btn secondary";
-        btnCopy.textContent = "Copiar texto";
-        btnCopy.addEventListener("click", async () => {
-          try{
-            await navigator.clipboard.writeText((p.title ? p.title + "\n\n" : "") + (p.text || ""));
-            setStatus("Texto copiado ✅", "ok");
-          }catch(e){
-            setStatus("Não consegui copiar (permissão do navegador).", "warn");
-          }
-        });
-
-        const btnDel = document.createElement("button");
-        btnDel.className = "mini btn danger";
-        btnDel.textContent = "Excluir";
-        btnDel.addEventListener("click", () => {
-          const ok = confirm("Excluir este post? Isso não dá pra desfazer (a menos que você tenha exportado).");
-          if (!ok) return;
-          posts = posts.filter(x => x.id !== p.id);
-          savePosts();
-          renderPosts();
-        });
-
-        actions.appendChild(btnCopy);
-        actions.appendChild(btnDel);
-
-        head.appendChild(left);
-        head.appendChild(actions);
-
-        const body = document.createElement("div");
-        body.className = "body";
-
-        const txt = document.createElement("p");
-        txt.textContent = p.text || "";
-        body.appendChild(txt);
-
-        if (p.images && p.images.length){
-          const grid = document.createElement("div");
-          grid.className = "imgs";
-          p.images.forEach((im) => {
-            const img = document.createElement("img");
-            img.src = im.dataUrl;
-            img.alt = im.name || "imagem";
-            img.title = im.name || "";
-            img.addEventListener("click", () => openDialog(im.dataUrl, im.name, im.size));
-            grid.appendChild(img);
-          });
-          body.appendChild(grid);
-        }
-
-        card.appendChild(head);
-        card.appendChild(body);
-        elPosts.appendChild(card);
-      });
-    }
-
-    // =============== Image ingest ===============
-    async function filesToDataUrls(files){
-      const arr = [];
-      for (const f of files){
-        if (!f.type.startsWith("image/")) continue;
-        const dataUrl = await new Promise((resolve, reject) => {
-          const r = new FileReader();
-          r.onload = () => resolve(r.result);
-          r.onerror = () => reject(new Error("Falha ao ler arquivo"));
-          r.readAsDataURL(f);
-        });
-        arr.push({
-          id: uid(),
-          name: f.name,
-          size: f.size,
-          type: f.type,
-          dataUrl
-        });
-      }
-      return arr;
-    }
-
-    // =============== Actions ===============
-    elImages.addEventListener("change", async (e) => {
-      const files = [...(e.target.files || [])];
-      if (!files.length) return;
-
-      setStatus("Processando imagens… 🧪", "");
-      try{
-        const imgs = await filesToDataUrls(files);
-        // concat (mantém as antigas)
-        selectedImages = selectedImages.concat(imgs);
-        updateSelectedMeta();
-        renderPreview();
-        setStatus("Imagens prontas ✅", "ok");
-      }catch(err){
-        console.error(err);
-        setStatus("Falha ao processar alguma imagem.", "bad");
-      }finally{
-        // permite selecionar o mesmo arquivo de novo
-        elImages.value = "";
-      }
+        <div class="tag">▶</div>
+      `;
+      item.addEventListener("click", () => setVideo(i, true));
+      playlist.appendChild(item);
     });
+  }
 
-    elBtnReset.addEventListener("click", () => {
-      elTitle.value = "";
-      elText.value = "";
-      selectedImages = [];
-      updateSelectedMeta();
-      renderPreview();
-      setStatus("Editor limpo.", "");
-    });
+  $("#btnPrev").addEventListener("click", () => setVideo(idx - 1, true));
+  $("#btnNext").addEventListener("click", () => setVideo(idx + 1, true));
 
-    elBtnPost.addEventListener("click", () => {
-      const title = (elTitle.value || "").trim();
-      const text = (elText.value || "").trim();
+  player.addEventListener("ended", () => {
+    if (chkAuto.checked) setVideo(idx + 1, true);
+  });
 
-      if (!title && !text && selectedImages.length === 0){
-        setStatus("Nada para publicar ainda. Escreva algo ou anexe imagens 🙂", "warn");
-        return;
-      }
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, (m) => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    }[m]));
+  }
 
-      const post = {
-        id: uid(),
-        title,
-        text,
-        createdAt: nowISO(),
-        images: selectedImages.map(im => ({
-          name: im.name,
-          size: im.size,
-          type: im.type,
-          dataUrl: im.dataUrl
-        }))
-      };
-
-      posts.push(post);
-
-      const ok = savePosts();
-      renderPosts();
-
-      if (ok){
-        // limpa editor
-        elTitle.value = "";
-        elText.value = "";
-        selectedImages = [];
-        updateSelectedMeta();
-        renderPreview();
-        setStatus("Publicado e salvo ✅", "ok");
-      }else{
-        // se falhar, deixa editor intacto para exportar/manual
-        setStatus("Não consegui salvar. Exporta seus dados agora pra não perder.", "bad");
-      }
-    });
-
-    elSearch.addEventListener("input", renderPosts);
-
-    elBtnSort.addEventListener("click", () => {
-      sortMode = sortMode === "recent" ? "old" : "recent";
-      elBtnSort.textContent = `Ordenar: ${sortMode === "recent" ? "recente" : "antigo"}`;
-      renderPosts();
-    });
-
-    elBtnClearAll.addEventListener("click", () => {
-      const ok = confirm("Apagar TODOS os posts do navegador? Isso é irreversível.");
-      if (!ok) return;
-      posts = [];
-      savePosts();
-      renderPosts();
-      setStatus("Tudo apagado.", "");
-    });
-
-    elBtnExport.addEventListener("click", () => {
-      const data = {
-        exportedAt: nowISO(),
-        version: 1,
-        posts
-      };
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      const stamp = new Date().toISOString().slice(0,19).replace(/[:T]/g,"-");
-      a.href = url;
-      a.download = `mural-export-${stamp}.json`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-      setStatus("Exportado ✅ (arquivo JSON baixado)", "ok");
-    });
-
-    elImportFile.addEventListener("change", async (e) => {
-      const file = e.target.files?.[0];
-      if (!file) return;
-      try{
-        const txt = await file.text();
-        const data = JSON.parse(txt);
-
-        if (!data || typeof data !== "object" || !Array.isArray(data.posts)){
-          setStatus("Arquivo inválido. Esperava um JSON com { posts: [...] }.", "bad");
-          return;
-        }
-
-        // merge inteligente por id
-        const existing = new Map(posts.map(p => [p.id, p]));
-        let added = 0;
-        for (const p of data.posts){
-          if (p && p.id && !existing.has(p.id)){
-            posts.push(p);
-            existing.set(p.id, p);
-            added++;
-          }
-        }
-
-        const ok = savePosts();
-        renderPosts();
-
-        setStatus(ok
-          ? `Importado ✅ (${added} novo(s) post(s) adicionado(s))`
-          : "Importei, mas não consegui salvar no LocalStorage (sem espaço). Exporte de novo em seguida.",
-          ok ? "ok" : "warn"
-        );
-      }catch(err){
-        console.error(err);
-        setStatus("Falha ao importar. O JSON pode estar corrompido.", "bad");
-      }finally{
-        elImportFile.value = "";
-      }
-    });
-
-    btnCloseDlg.addEventListener("click", () => dlg.close());
-    dlg.addEventListener("click", (e) => {
-      // fecha ao clicar fora da imagem
-      const rect = dlg.getBoundingClientRect();
-      const isInDialog = (
-        e.clientX >= rect.left && e.clientX <= rect.right &&
-        e.clientY >= rect.top && e.clientY <= rect.bottom
-      );
-      if (!isInDialog) dlg.close();
-    });
-
-    // =============== Initial render ===============
-    updateSelectedMeta();
-    renderPreview();
-    renderPosts();
-  </script>
+  // init
+  if (!VIDEOS.length){
+    titleEl.textContent = "Nenhum vídeo configurado";
+    metaEl.textContent = "Edite o array VIDEOS no código.";
+  } else {
+    renderPlaylist();
+    setVideo(0, false);
+  }
+</script>
 </body>
 </html>
