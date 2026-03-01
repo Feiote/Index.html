@@ -1,186 +1,178 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/index.html b/index.html
-index fc1abd51a45cff041eed2e4920bfa74b16db50ab..f9336196b134b4855ea30d07eda09666ecdb551d 100644
---- a/index.html
-+++ b/index.html
-@@ -1,31 +1,31 @@
- <!doctype html>
- <html lang="pt-BR">
- <head>
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width,initial-scale=1" />
-   <title>Para o Amor da Minha Vida 💛</title>
-   <style>
-     :root{
-       --bg:#070a12;
-       --panel:#0f172a;
-       --panel2:#111827;
-       --text:#e5e7eb;
-       --muted:#94a3b8;
-       --accent:#f472b6;
-       --accent2:#60a5fa;
-       --border:#233147;
-       --shadow: 0 14px 38px rgba(0,0,0,.45);
-       --r: 22px;
-       --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-     }
-     *{box-sizing:border-box}
-     body{
-       margin:0; font-family:var(--sans); color:var(--text);
-       background:
-         radial-gradient(900px 600px at 12% 0%, rgba(244,114,182,.22), transparent 60%),
-         radial-gradient(900px 600px at 90% 10%, rgba(96,165,250,.18), transparent 60%),
-         var(--bg);
-     }
-     header{
-       position:sticky; top:0; z-index:10;
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pra Você 💛</title>
+  <title>Para o Amor da Minha Vida 💛</title>
+  <style>
+    :root{
+      --bg:#070a12;
+      --panel:#0f172a;
+      --panel2:#111827;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --accent:#f472b6;
+      --accent2:#60a5fa;
+      --border:#233147;
+      --shadow: 0 14px 38px rgba(0,0,0,.45);
+      --r: 22px;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:var(--sans); color:var(--text);
+      background:
+        radial-gradient(900px 600px at 12% 0%, rgba(244,114,182,.22), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(96,165,250,.18), transparent 60%),
+        var(--bg);
+    }
+    header{
+      position:sticky; top:0; z-index:10;
 @@ -173,52 +173,52 @@
-       padding:12px;
-       margin-top:12px;
-     }
-     .surprise .out{
-       margin-top:8px;
-       font-size:14px;
-       color: rgba(229,231,235,.95);
-       min-height: 22px;
-     }
-     footer{
-       padding:18px 16px;
-       text-align:center;
-       color: var(--muted);
-       font-size:12px;
-     }
-   </style>
- </head>
- 
- <body>
- <header>
-   <div class="wrap">
-     <div class="top">
-       <div class="brand">
-         <div class="orb" aria-hidden="true"></div>
-         <div>
--          <h1>Pra você, com carinho 💛</h1>
--          <div class="sub">Vídeos + mensagens. Um cantinho nosso.</div>
-+          <h1>Para a mulher mais importante da minha vida 💛</h1>
-+          <div class="sub">Um cantinho com seus vídeos e tudo o que eu sinto por você.</div>
-         </div>
-       </div>
-       <div class="btns">
-         <button id="btnRandom">Mensagem surpresa</button>
-         <button id="btnScroll">Ir pros vídeos</button>
-       </div>
-     </div>
-   </div>
- </header>
- 
- <main class="wrap">
-   <div class="grid">
- 
-     <section class="card">
-       <h2>
-         <span>Carta</span>
-         <span class="pill" id="today"></span>
-       </h2>
-       <div class="content">
-         <div class="letter" id="letter"></div>
- 
-         <div class="surprise">
-           <div class="meta">Quando você apertar “Mensagem surpresa”, aparece aqui:</div>
-           <div class="out" id="surpriseOut"></div>
-         </div>
+      padding:12px;
+      margin-top:12px;
+    }
+    .surprise .out{
+      margin-top:8px;
+      font-size:14px;
+      color: rgba(229,231,235,.95);
+      min-height: 22px;
+    }
+    footer{
+      padding:18px 16px;
+      text-align:center;
+      color: var(--muted);
+      font-size:12px;
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="orb" aria-hidden="true"></div>
+        <div>
+          <h1>Pra você, com carinho 💛</h1>
+          <div class="sub">Vídeos + mensagens. Um cantinho nosso.</div>
+          <h1>Para a mulher mais importante da minha vida 💛</h1>
+          <div class="sub">Um cantinho com seus vídeos e tudo o que eu sinto por você.</div>
+        </div>
+      </div>
+      <div class="btns">
+        <button id="btnRandom">Mensagem surpresa</button>
+        <button id="btnScroll">Ir pros vídeos</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+
+    <section class="card">
+      <h2>
+        <span>Carta</span>
+        <span class="pill" id="today"></span>
+      </h2>
+      <div class="content">
+        <div class="letter" id="letter"></div>
+
+        <div class="surprise">
+          <div class="meta">Quando você apertar “Mensagem surpresa”, aparece aqui:</div>
+          <div class="out" id="surpriseOut"></div>
+        </div>
 @@ -247,75 +247,80 @@
-           <div>
-             <div class="playerTitle" id="playerTitle"></div>
-             <div class="meta" id="playerMeta"></div>
-           </div>
- 
-           <div class="controls">
-             <button class="mini" id="btnPrev">⟵ Anterior</button>
-             <button class="mini" id="btnNext">Próximo ⟶</button>
-             <label title="Se estiver ligado, ao acabar um vídeo ele vai para o próximo automaticamente.">
-               <input type="checkbox" id="chkAuto" checked />
-               Auto-próximo
-             </label>
-           </div>
-         </div>
- 
-         <video id="player" controls preload="metadata" playsinline></video>
- 
-         <div class="playlist" id="playlist"></div>
-       </div>
-     </section>
- 
-   </div>
- </main>
- 
- <footer>
--  Eu te amo muito, amor. 💛
-+  Eu te amo infinitamente. Você é tudo pra mim. 💛
- </footer>
- 
- <script>
-   // =========================
-   // PERSONALIZE AQUI (FÁCIL)
-   // =========================
- 
-   const NOME_DELA = "Meu Amor"; // troque pelo nome dela
- 
-   const CARTA = `Oi, ${NOME_DELA} 💛
- 
--Eu fiz esse site só pra você.
--Pra você abrir quando quiser, ver nossos vídeos, ler minhas mensagens e lembrar que eu penso em você o tempo todo.
-+Eu fiz esse site só pra você, pra guardar seus vídeos e lembrar todos os dias o quanto você é especial pra mim.
- 
--Eu te amo muito, amor.`;
-+Seu cabelo cacheado é simplesmente maravilhoso.
-+Seus olhos são lindos de um jeito que acalma o meu coração.
-+Seu sorriso é perfeito e ilumina qualquer momento.
-+Seu corpo é maravilhoso e você é linda por inteiro.
-+
-+Você é a mulher mais importante da minha vida.
-+Eu te amo muito, hoje e sempre.`;
- 
-   // Frases (adicione/remova à vontade)
-   const FRASES = [
--    { texto: "Eu te amo muito, amor. Muito mesmo.", assinatura: "— eu" },
--    { texto: "Seu cabelo cacheado é absurdamente lindo. É tipo uma obra de arte que a natureza decidiu caprichar.", assinatura: "— eu, admirando" },
--    { texto: "Seus olhos são lindos demais. Dá vontade de morar ali e pagar aluguel com carinho.", assinatura: "— eu" },
--    { texto: "Seu sorriso é perfeito. Ele muda o meu dia na hora, como se fosse um atalho secreto pra felicidade.", assinatura: "— eu" },
--    { texto: "Você é maravilhosa do jeitinho que é. E eu tenho orgulho de você.", assinatura: "— eu" },
--    { texto: "Você é linda. Seu corpo é lindo. E o melhor: você inteira é uma pessoa incrível.", assinatura: "— eu" }
-+    { texto: "Eu te amo muito. Muito mesmo. Você é meu amor e minha paz.", assinatura: "— eu" },
-+    { texto: "Seu cabelo cacheado é a coisa mais linda do mundo. Eu amo cada detalhe.", assinatura: "— eu, apaixonado" },
-+    { texto: "Seus olhos são lindos e têm um brilho que me prende de um jeito bom.", assinatura: "— eu" },
-+    { texto: "Seu sorriso é perfeito. Quando você sorri, meu dia fica completo.", assinatura: "— eu" },
-+    { texto: "Seu corpo é maravilhoso e você é linda por inteiro.", assinatura: "— eu" },
-+    { texto: "Você é a mulher mais importante da minha vida e eu sou muito grato por ter você.", assinatura: "— eu" }
-   ];
- 
-   // Seus vídeos (nomes EXATOS como aparecem no repo)
-   // Como eles estão na RAIZ do repositório, não tem "videos/" antes.
-   const VIDEOS = [
-     { title: "Minha Mulher 1 💛", file: "Minha Mulher (1).mp4" },
-     { title: "Minha Mulher 2 💛", file: "Minha Mulher (2).mp4" },
-     { title: "Minha Mulher 3 💛", file: "Minha Mulher (3).mp4" },
-     { title: "Minha Mulher 4 💛", file: "Minha Mulher (4).mp4" },
-     { title: "Minha Mulher 5 💛", file: "Minha Mulher (5).mp4" },
-     { title: "Minha Mulher 6 💛", file: "Minha Mulher (6).mp4" },
-     { title: "Minha Mulher 7 💛", file: "Minha Mulher (7).mp4" },
-     { title: "Minha Mulher 8 💛", file: "Minha Mulher (8).mp4" },
-     { title: "Minha Mulher 9 💛", file: "Minha Mulher (9).mp4" },
-     { title: "Minha Mulher 10 💛", file: "Minha Mulher (10).mp4" }
-   ];
- 
-   // =========================
-   // CÓDIGO DO SITE (NÃO MEXE)
-   // =========================
- 
-   const $ = (s) => document.querySelector(s);
- 
-   // carta + data
-   $("#letter").textContent = CARTA;
- 
-EOF
-)
+          <div>
+            <div class="playerTitle" id="playerTitle"></div>
+            <div class="meta" id="playerMeta"></div>
+          </div>
+
+          <div class="controls">
+            <button class="mini" id="btnPrev">⟵ Anterior</button>
+            <button class="mini" id="btnNext">Próximo ⟶</button>
+            <label title="Se estiver ligado, ao acabar um vídeo ele vai para o próximo automaticamente.">
+              <input type="checkbox" id="chkAuto" checked />
+              Auto-próximo
+            </label>
+          </div>
+        </div>
+
+        <video id="player" controls preload="metadata" playsinline></video>
+
+        <div class="playlist" id="playlist"></div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  Eu te amo muito, amor. 💛
+  Eu te amo infinitamente. Você é tudo pra mim. 💛
+</footer>
+
+<script>
+  // =========================
+  // PERSONALIZE AQUI (FÁCIL)
+  // =========================
+
+  const NOME_DELA = "Meu Amor"; // troque pelo nome dela
+
+  const CARTA = `Oi, ${NOME_DELA} 💛
+
+Eu fiz esse site só pra você.
+Pra você abrir quando quiser, ver nossos vídeos, ler minhas mensagens e lembrar que eu penso em você o tempo todo.
+Eu fiz esse site só pra você, pra guardar seus vídeos e lembrar todos os dias o quanto você é especial pra mim.
+
+Eu te amo muito, amor.`;
+Seu cabelo cacheado é simplesmente maravilhoso.
+Seus olhos são lindos de um jeito que acalma o meu coração.
+Seu sorriso é perfeito e ilumina qualquer momento.
+Seu corpo é maravilhoso e você é linda por inteiro.
+
+Você é a mulher mais importante da minha vida.
+Eu te amo muito, hoje e sempre.`;
+
+  // Frases (adicione/remova à vontade)
+  const FRASES = [
+    { texto: "Eu te amo muito, amor. Muito mesmo.", assinatura: "— eu" },
+    { texto: "Seu cabelo cacheado é absurdamente lindo. É tipo uma obra de arte que a natureza decidiu caprichar.", assinatura: "— eu, admirando" },
+    { texto: "Seus olhos são lindos demais. Dá vontade de morar ali e pagar aluguel com carinho.", assinatura: "— eu" },
+    { texto: "Seu sorriso é perfeito. Ele muda o meu dia na hora, como se fosse um atalho secreto pra felicidade.", assinatura: "— eu" },
+    { texto: "Você é maravilhosa do jeitinho que é. E eu tenho orgulho de você.", assinatura: "— eu" },
+    { texto: "Você é linda. Seu corpo é lindo. E o melhor: você inteira é uma pessoa incrível.", assinatura: "— eu" }
+    { texto: "Eu te amo muito. Muito mesmo. Você é meu amor e minha paz.", assinatura: "— eu" },
+    { texto: "Seu cabelo cacheado é a coisa mais linda do mundo. Eu amo cada detalhe.", assinatura: "— eu, apaixonado" },
+    { texto: "Seus olhos são lindos e têm um brilho que me prende de um jeito bom.", assinatura: "— eu" },
+    { texto: "Seu sorriso é perfeito. Quando você sorri, meu dia fica completo.", assinatura: "— eu" },
+    { texto: "Seu corpo é maravilhoso e você é linda por inteiro.", assinatura: "— eu" },
+    { texto: "Você é a mulher mais importante da minha vida e eu sou muito grato por ter você.", assinatura: "— eu" }
+  ];
+
+  // Seus vídeos (nomes EXATOS como aparecem no repo)
+  // Como eles estão na RAIZ do repositório, não tem "videos/" antes.
+  const VIDEOS = [
+    { title: "Minha Mulher 1 💛", file: "Minha Mulher (1).mp4" },
+    { title: "Minha Mulher 2 💛", file: "Minha Mulher (2).mp4" },
+    { title: "Minha Mulher 3 💛", file: "Minha Mulher (3).mp4" },
+    { title: "Minha Mulher 4 💛", file: "Minha Mulher (4).mp4" },
+    { title: "Minha Mulher 5 💛", file: "Minha Mulher (5).mp4" },
+    { title: "Minha Mulher 6 💛", file: "Minha Mulher (6).mp4" },
+    { title: "Minha Mulher 7 💛", file: "Minha Mulher (7).mp4" },
+    { title: "Minha Mulher 8 💛", file: "Minha Mulher (8).mp4" },
+    { title: "Minha Mulher 9 💛", file: "Minha Mulher (9).mp4" },
+    { title: "Minha Mulher 10 💛", file: "Minha Mulher (10).mp4" }
+  ];
+
+  // =========================
+  // CÓDIGO DO SITE (NÃO MEXE)
+  // =========================
+
+  const $ = (s) => document.querySelector(s);
+
+  // carta + data
+  $("#letter").textContent = CARTA;
