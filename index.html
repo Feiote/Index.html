@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pra Você 💛</title>
-  <title>Para o Amor da Minha Vida 💛</title>
   <style>
     :root{
       --bg:#070a12;
@@ -30,7 +29,147 @@
     }
     header{
       position:sticky; top:0; z-index:10;
-@@ -173,52 +173,52 @@
+      backdrop-filter: blur(10px);
+      background: rgba(7,10,18,.65);
+      border-bottom: 1px solid rgba(35,49,71,.75);
+    }
+    .wrap{max-width:1100px; margin:0 auto; padding:16px}
+    .top{
+      display:flex; gap:12px; justify-content:space-between; align-items:center; flex-wrap:wrap;
+    }
+    .brand{display:flex; gap:12px; align-items:center}
+    .orb{
+      width:44px; height:44px; border-radius:16px;
+      background: linear-gradient(135deg, rgba(244,114,182,.95), rgba(96,165,250,.85));
+      box-shadow: var(--shadow);
+    }
+    h1{margin:0; font-size:18px}
+    .sub{margin-top:3px; color:var(--muted); font-size:12px}
+    .btns{display:flex; gap:10px; flex-wrap:wrap}
+    button{
+      border:1px solid rgba(35,49,71,.92);
+      background: linear-gradient(180deg, rgba(15,23,42,.92), rgba(17,24,39,.9));
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:16px;
+      cursor:pointer;
+      font-weight:800;
+      box-shadow: 0 6px 16px rgba(0,0,0,.25);
+      transition: transform .05s ease, border-color .15s ease;
+    }
+    button:hover{border-color: rgba(244,114,182,.65)}
+    button:active{transform: translateY(1px)}
+    main{padding:16px 0 34px}
+    .grid{
+      display:grid; grid-template-columns: 1fr 1fr; gap:16px;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns: 1fr} }
+    .card{
+      background: rgba(15,23,42,.76);
+      border:1px solid rgba(35,49,71,.92);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card h2{
+      margin:0; padding:14px 14px 10px;
+      font-size:13px; letter-spacing:.2px;
+      color:#ffe4f2;
+      border-bottom:1px solid rgba(35,49,71,.7);
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+    }
+    .content{padding:14px}
+    .meta{font-size:12px; color:var(--muted)}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid rgba(35,49,71,.92);
+      background: rgba(17,24,39,.7);
+      color: rgba(229,231,235,.92);
+      font-size:12px;
+      font-family: var(--mono);
+    }
+    .letter{
+      font-size:14px; line-height:1.55;
+      color: rgba(229,231,235,.95);
+      white-space:pre-wrap;
+    }
+    .quotes{
+      display:flex; flex-direction:column; gap:10px;
+      margin-top:10px;
+    }
+    .quote{
+      border:1px solid rgba(35,49,71,.92);
+      background: rgba(17,24,39,.6);
+      border-radius: 16px;
+      padding:12px;
+    }
+    .quote b{color:#ffd1e8}
+    .quote .t{font-size:13px; line-height:1.45}
+    .quote .s{margin-top:6px; font-size:11px; color:var(--muted)}
+    .big{grid-column: 1 / -1;}
+
+    /* player */
+    .playerTop{
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+      flex-wrap:wrap; margin-bottom:10px;
+    }
+    .playerTitle{
+      font-weight:900;
+      color: rgba(229,231,235,.95);
+    }
+    .controls{
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center;
+    }
+    .controls button{padding:10px 12px}
+    .controls .mini{
+      padding:8px 10px; border-radius:14px; font-size:12px; font-weight:900;
+    }
+    .controls label{
+      display:flex; gap:8px; align-items:center;
+      border:1px solid rgba(35,49,71,.92);
+      background: rgba(17,24,39,.6);
+      padding:8px 10px;
+      border-radius: 14px;
+      color: rgba(229,231,235,.92);
+      font-size:12px;
+      user-select:none;
+    }
+    .controls input{accent-color: var(--accent);}
+    video{
+      width:100%;
+      display:block;
+      background:#000;
+      border-radius: 18px;
+      border:1px solid rgba(35,49,71,.92);
+    }
+    .playlist{
+      margin-top:12px;
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:10px;
+    }
+    @media (max-width: 720px){ .playlist{grid-template-columns: 1fr} }
+    .item{
+      border:1px solid rgba(35,49,71,.92);
+      background: rgba(17,24,39,.55);
+      border-radius: 16px;
+      padding:10px 12px;
+      cursor:pointer;
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+    }
+    .item:hover{border-color: rgba(96,165,250,.55)}
+    .item.active{
+      border-color: rgba(244,114,182,.85);
+      box-shadow: 0 0 0 3px rgba(244,114,182,.15);
+    }
+    .item .name{font-weight:900; font-size:13px}
+    .item .tag{font-size:11px; color:var(--muted); font-family: var(--mono)}
+    .surprise{
+      border:1px dashed rgba(244,114,182,.55);
+      background: rgba(244,114,182,.08);
+      border-radius: 18px;
       padding:12px;
       margin-top:12px;
     }
@@ -58,8 +197,6 @@
         <div>
           <h1>Pra você, com carinho 💛</h1>
           <div class="sub">Vídeos + mensagens. Um cantinho nosso.</div>
-          <h1>Para a mulher mais importante da minha vida 💛</h1>
-          <div class="sub">Um cantinho com seus vídeos e tudo o que eu sinto por você.</div>
         </div>
       </div>
       <div class="btns">
@@ -85,7 +222,28 @@
           <div class="meta">Quando você apertar “Mensagem surpresa”, aparece aqui:</div>
           <div class="out" id="surpriseOut"></div>
         </div>
-@@ -247,75 +247,80 @@
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>
+        <span>Frases</span>
+        <span class="meta" id="qCount"></span>
+      </h2>
+      <div class="content">
+        <div class="meta">Coisas que eu penso quando penso em você.</div>
+        <div class="quotes" id="quotes"></div>
+      </div>
+    </section>
+
+    <section class="card big" id="videosCard">
+      <h2>
+        <span>Vídeos</span>
+        <span class="meta">Use Anterior/Próximo ou clique na playlist</span>
+      </h2>
+      <div class="content">
+
+        <div class="playerTop">
           <div>
             <div class="playerTitle" id="playerTitle"></div>
             <div class="meta" id="playerMeta"></div>
@@ -112,7 +270,6 @@
 
 <footer>
   Eu te amo muito, amor. 💛
-  Eu te amo infinitamente. Você é tudo pra mim. 💛
 </footer>
 
 <script>
@@ -126,16 +283,8 @@
 
 Eu fiz esse site só pra você.
 Pra você abrir quando quiser, ver nossos vídeos, ler minhas mensagens e lembrar que eu penso em você o tempo todo.
-Eu fiz esse site só pra você, pra guardar seus vídeos e lembrar todos os dias o quanto você é especial pra mim.
 
 Eu te amo muito, amor.`;
-Seu cabelo cacheado é simplesmente maravilhoso.
-Seus olhos são lindos de um jeito que acalma o meu coração.
-Seu sorriso é perfeito e ilumina qualquer momento.
-Seu corpo é maravilhoso e você é linda por inteiro.
-
-Você é a mulher mais importante da minha vida.
-Eu te amo muito, hoje e sempre.`;
 
   // Frases (adicione/remova à vontade)
   const FRASES = [
@@ -145,12 +294,6 @@ Eu te amo muito, hoje e sempre.`;
     { texto: "Seu sorriso é perfeito. Ele muda o meu dia na hora, como se fosse um atalho secreto pra felicidade.", assinatura: "— eu" },
     { texto: "Você é maravilhosa do jeitinho que é. E eu tenho orgulho de você.", assinatura: "— eu" },
     { texto: "Você é linda. Seu corpo é lindo. E o melhor: você inteira é uma pessoa incrível.", assinatura: "— eu" }
-    { texto: "Eu te amo muito. Muito mesmo. Você é meu amor e minha paz.", assinatura: "— eu" },
-    { texto: "Seu cabelo cacheado é a coisa mais linda do mundo. Eu amo cada detalhe.", assinatura: "— eu, apaixonado" },
-    { texto: "Seus olhos são lindos e têm um brilho que me prende de um jeito bom.", assinatura: "— eu" },
-    { texto: "Seu sorriso é perfeito. Quando você sorri, meu dia fica completo.", assinatura: "— eu" },
-    { texto: "Seu corpo é maravilhoso e você é linda por inteiro.", assinatura: "— eu" },
-    { texto: "Você é a mulher mais importante da minha vida e eu sou muito grato por ter você.", assinatura: "— eu" }
   ];
 
   // Seus vídeos (nomes EXATOS como aparecem no repo)
@@ -176,3 +319,102 @@ Eu te amo muito, hoje e sempre.`;
 
   // carta + data
   $("#letter").textContent = CARTA;
+  const d = new Date();
+  $("#today").textContent = d.toLocaleDateString("pt-BR", { day:"2-digit", month:"long", year:"numeric" });
+
+  // frases
+  $("#qCount").textContent = `${FRASES.length} frase(s)`;
+  const qWrap = $("#quotes");
+  qWrap.innerHTML = "";
+  FRASES.forEach((q) => {
+    const box = document.createElement("div");
+    box.className = "quote";
+    box.innerHTML = `
+      <div class="t"><b>“</b>${escapeHtml(q.texto)}<b>”</b></div>
+      <div class="s">${escapeHtml(q.assinatura || "")}</div>
+    `;
+    qWrap.appendChild(box);
+  });
+
+  // surpresa
+  $("#btnRandom").addEventListener("click", () => {
+    const pick = FRASES[Math.floor(Math.random() * FRASES.length)];
+    $("#surpriseOut").textContent = `“${pick.texto}” ${pick.assinatura ? pick.assinatura : ""}`;
+  });
+
+  // scroll
+  $("#btnScroll").addEventListener("click", () => {
+    $("#videosCard").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // player + playlist
+  const player = $("#player");
+  const playlist = $("#playlist");
+  const titleEl = $("#playerTitle");
+  const metaEl = $("#playerMeta");
+  const chkAuto = $("#chkAuto");
+
+  let idx = 0;
+
+  function setVideo(i, autoplay=false){
+    if (!VIDEOS.length) return;
+    idx = (i + VIDEOS.length) % VIDEOS.length;
+
+    const v = VIDEOS[idx];
+    titleEl.textContent = v.title || `Vídeo ${idx+1}`;
+    metaEl.textContent = `Vídeo ${idx+1} de ${VIDEOS.length}`;
+
+    // encodeURI resolve espaços/parênteses na URL do arquivo
+    player.src = encodeURI(v.file);
+
+    // marca ativo na playlist
+    [...playlist.children].forEach((el, j) => {
+      el.classList.toggle("active", j === idx);
+    });
+
+    if (autoplay){
+      player.play().catch(()=>{ /* ignore: navegador pode bloquear autoplay */ });
+    }
+  }
+
+  function renderPlaylist(){
+    playlist.innerHTML = "";
+    VIDEOS.forEach((v, i) => {
+      const item = document.createElement("div");
+      item.className = "item";
+      item.innerHTML = `
+        <div>
+          <div class="name">${escapeHtml(v.title || `Vídeo ${i+1}`)}</div>
+          <div class="tag">${escapeHtml(v.file)}</div>
+        </div>
+        <div class="tag">▶</div>
+      `;
+      item.addEventListener("click", () => setVideo(i, true));
+      playlist.appendChild(item);
+    });
+  }
+
+  $("#btnPrev").addEventListener("click", () => setVideo(idx - 1, true));
+  $("#btnNext").addEventListener("click", () => setVideo(idx + 1, true));
+
+  player.addEventListener("ended", () => {
+    if (chkAuto.checked) setVideo(idx + 1, true);
+  });
+
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, (m) => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    }[m]));
+  }
+
+  // init
+  if (!VIDEOS.length){
+    titleEl.textContent = "Nenhum vídeo configurado";
+    metaEl.textContent = "Edite o array VIDEOS no código.";
+  } else {
+    renderPlaylist();
+    setVideo(0, false);
+  }
+</script>
+</body>
+</html>
